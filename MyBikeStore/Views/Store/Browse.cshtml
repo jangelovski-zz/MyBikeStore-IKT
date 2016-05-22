@@ -1,0 +1,16 @@
+﻿@model MyBikeStore.Models.Kategorija
+
+@{
+    ViewBag.Title = "Категории";
+}
+
+<h2>Категорија @Model.Ime_na_kategorija</h2>
+<ul>
+    @foreach (var velosipedi in Model.Velosipedi)
+    {
+        <li>
+           @Html.ActionLink(velosipedi.Ime, "Details", new { id = velosipedi.VelosipedID })
+        </li>
+    }
+</ul>
+

@@ -1,0 +1,21 @@
+﻿@model IEnumerable<MyBikeStore.Models.Kategorija>
+
+@{
+    ViewBag.Title = "Купи Велосипед Онлајн";
+}
+
+<h3>Категории на велосипеди</h3>
+
+<p>
+    Одбери од @Model.Count() категории:
+</p>
+
+<ul>
+    @foreach(var kategorija in Model)
+    {
+        <li>
+            @Html.ActionLink(kategorija.Ime_na_kategorija, "Browse", new { kategorija = kategorija.Ime_na_kategorija})
+        </li>
+    }
+</ul>
+

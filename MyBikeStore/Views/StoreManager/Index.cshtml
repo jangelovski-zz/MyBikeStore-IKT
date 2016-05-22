@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MyBikeStore.Models.Velosiped>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Категорија
+        </th>
+        <th>
+            Производител
+        </th>
+        <th>
+            Име
+        </th>
+        <th>
+            Цена
+        </th>
+        
+        <th>Цена</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kategorija.Ime_na_kategorija)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Proizvoditel.Ime_na_proizvoditel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cena)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Измени", "Edit", new { id=item.VelosipedID }) |
+            @Html.ActionLink("Детали", "Details", new { id=item.VelosipedID }) |
+            @Html.ActionLink("Избриши", "Delete", new { id=item.VelosipedID })
+        </td>
+    </tr>
+}
+
+</table>

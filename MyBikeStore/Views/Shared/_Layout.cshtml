@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"
+            type="text/javascript"></script>
+</head>
+<body>
+    <div id="header">
+        <h1>
+            MyBikeStore
+        </h1>
+        <ul id="navlist">
+            <li class="first">
+                <a href="/"
+                   id="current">Почетна</a>
+            </li>
+            <li>
+                <a href="/Store/">Продавница</a>
+            </li>
+        </ul>
+    </div>
+    @RenderSection("scripts", required: false)
+    @RenderBody()
+</body>
+</html>
